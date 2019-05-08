@@ -1,0 +1,2 @@
+class VoicePart < ApplicationRecord
+end
