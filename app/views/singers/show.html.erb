@@ -1,0 +1,5 @@
+<div><%= @singer.name %></div>
+<div>Active: <%= @singer.active? %></div>
+
+<%= link_to "Edit This Singer", edit_singer_path(@singer) %>
+<%= link_to "All Singers", singers_path %>

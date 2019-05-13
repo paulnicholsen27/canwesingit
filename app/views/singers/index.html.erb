@@ -1,0 +1,7 @@
+<% @active_singers.each do |s| %>
+    <div><%= link_to s.name, singer_path(s) %></div>
+<% end %>
+
+<% @inactive_singers.each do |s| %>
+    <div><%= link_to s.name, singer_path(s) %></div>
+<% end %>
