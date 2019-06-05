@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_193850) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "active?"
+    t.boolean "active"
   end
 
   create_table "songs", force: :cascade do |t|

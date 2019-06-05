@@ -6,7 +6,6 @@ class SingersController < ApplicationController
     end
 
     def create
-        byebug
         @singer = Singer.new(singer_params)
         if @singer.valid?
             @singer.save
@@ -45,6 +44,6 @@ class SingersController < ApplicationController
     end
 
     def singer_params
-        params.require(:singer).permit(:name, :active?)
+        params.require(:singer).permit(:name, :active)
     end
 end
