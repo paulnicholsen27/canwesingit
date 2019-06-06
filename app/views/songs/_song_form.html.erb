@@ -1,0 +1,9 @@
+<%= render partial: "shared/error_list", locals: {new_object: @song} %>
+
+<%= form_for @song do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+    <%= f.submit %>
+<% end %>

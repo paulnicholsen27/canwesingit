@@ -17,3 +17,6 @@ Singer.create(name: "Jonathan Jones", active: true)
 Singer.create(name: "Gibson Haynes", active: true)
 Singer.create(name: "Mike Allen", active: true)
 Singer.create(name: "Jim Gruschus", active: true)
+
+Song.create(title: "Crazy Little Thing Called Love")
+Song.create(title: "Don't Stop Me Now", notes: "Upbeat")

@@ -3,7 +3,7 @@
 <%= form_for @singer do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :active %>
-    <%= f.check_box :active, :checked => @singer.active? %>
+    <%= f.label :active? %>
+    <%= f.check_box :active?, :checked => true %>
     <%= f.submit %>
 <% end %>
