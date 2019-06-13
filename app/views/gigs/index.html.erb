@@ -1,0 +1,5 @@
+<% @gigs.each do |gig| %>
+    <div><%= link_to gig.name, gig_path(gig) %></div>
+<% end %>
+
+<%= link_to "Add a Gig", new_gig_path %>

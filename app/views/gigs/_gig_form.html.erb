@@ -1,0 +1,12 @@
+<%= render partial: "shared/error_list", locals: {new_object: @gig} %>
+
+<%= form_for @gig do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+    <%= f.label :datetime %>
+    <%= f.date_select(:datetime, selected: Date.today) %>
+
+    <%= f.submit %>
+<% end %>

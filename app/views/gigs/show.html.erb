@@ -1,0 +1,8 @@
+<div><%= @gig.name %></div>
+<div>Notes: <%= @gig.notes %></div>
+<div>Date: <%= @gig.datetime %></div>
+
+<%= link_to "Edit This Gig", edit_gig_path(@gig) %>
+<%= link_to 'Delete This Gig', gig_path(@gig),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %>
+<%= link_to "All Gigs", gigs_path %>
