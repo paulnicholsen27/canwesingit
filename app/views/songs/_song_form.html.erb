@@ -6,6 +6,6 @@
     <%= f.label :notes %>
     <%= f.text_area :notes %>
     <%= f.label :active %>
-    <%= f.check_box :active, :checked => true %>
+    <%= f.check_box :active, :checked => @song.id ? @song.active? : true %>
     <%= f.submit %>
 <% end %>

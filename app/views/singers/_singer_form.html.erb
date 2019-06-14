@@ -4,6 +4,6 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :active? %>
-    <%= f.check_box :active?, :checked => true %>
+    <%= f.check_box :active?, :checked => @singer.id ? @singer.active? : true  %>
     <%= f.submit %>
 <% end %>
