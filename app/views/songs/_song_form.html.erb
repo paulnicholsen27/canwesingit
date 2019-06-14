@@ -5,5 +5,7 @@
     <%= f.text_field :title %>
     <%= f.label :notes %>
     <%= f.text_area :notes %>
+    <%= f.label :active %>
+    <%= f.check_box :active, :checked => true %>
     <%= f.submit %>
 <% end %>
