@@ -1,2 +1,0 @@
-class VoicePartsController < ApplicationController
-end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VoicePartTest < ActiveSupport::TestCase
+class PartTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

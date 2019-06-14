@@ -1,0 +1,2 @@
+module SingerRolesHelper
+end
