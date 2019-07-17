@@ -5,7 +5,9 @@
     <%= f.text_field :title %>
     <%= f.label :notes %>
     <%= f.text_area :notes %>
-    <%= f.label :active %>
+    <%= f.label :holiday, "Holiday?" %>
+    <%= f.check_box :holiday, :checked => @song.id ? @song.holiday? : false %>
+    <%= f.label :active, "Active?" %>
     <%= f.check_box :active, :checked => @song.id ? @song.active? : true %>
     <%= f.submit %>
 <% end %>

@@ -1,5 +1,6 @@
 <div><%= @song.title %></div>
 <div>Notes: <%= @song.notes %></div>
+<div>Holiday: <%= @song.holiday? %></div>
 <div>Active: <%= @song.active? %></div>
 
 <%= link_to "Edit This Song", edit_song_path(@song) %>
