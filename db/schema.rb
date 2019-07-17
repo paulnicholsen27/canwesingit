@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_162300) do
   create_table "singer_roles", force: :cascade do |t|
     t.integer "singer_id"
     t.integer "part_id"
+    t.boolean "primary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
