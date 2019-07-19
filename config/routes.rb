@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gig_singers
   resources :singer_roles
   resources :parts
   resources :gigs

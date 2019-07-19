@@ -1,0 +1,2 @@
+module GigSingersHelper
+end

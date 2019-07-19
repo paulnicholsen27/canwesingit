@@ -21,6 +21,7 @@ class GigsController < ApplicationController
     end
 
     def show
+        @singers = Singer.active
     end
 
     def edit

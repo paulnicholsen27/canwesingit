@@ -2,6 +2,19 @@
 <div>Notes: <%= @gig.notes %></div>
 <div>Date: <%= @gig.datetime %></div>
 
+<h2>Choose the singers attending this performance</h2>
+
+<%= form_tag gig_singers_path do %>
+    <input type="hidden" name="gig_id" value="<%= @gig.id %>" />
+    <% @singers.each do |s| %>
+        <div>
+            <%= check_box_tag "singer_ids[]", s.id, checked = @gig.singers.include?(s) %>
+            <%= s.name %>
+        </div>
+    <% end %>
+    <%= submit_tag "Update" %>
+<% end %>
+
 <%= link_to "Edit This Gig", edit_gig_path(@gig) %>
 <%= link_to 'Delete This Gig', gig_path(@gig),
             data: {:confirm => 'Are you sure?'}, :method => :delete %>
