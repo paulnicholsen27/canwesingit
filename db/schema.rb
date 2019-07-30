@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_195106) do
+ActiveRecord::Schema.define(version: 2019_07_26_154900) do
 
   create_table "gig_singers", force: :cascade do |t|
     t.integer "gig_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_195106) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "singer_roles", force: :cascade do |t|
+  create_table "singer_parts", force: :cascade do |t|
     t.integer "singer_id"
     t.integer "part_id"
     t.boolean "primary"

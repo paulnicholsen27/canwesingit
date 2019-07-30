@@ -1,0 +1,18 @@
+<div>Parts needed for <%= link_to @song.title, song_path(@song) %></div>
+
+<ul>
+    <% @parts.each do |p| %>
+        <li><%= p.name %></li>
+    <% end %>
+</ul>
+
+
+<div>
+    Add a part:
+
+    <%= form_for @new_part do |f| %>
+        <%= f.text_field :name %>
+        <%= f.hidden_field :song_id, :value => @song.id %>
+        <%= f.submit %>
+    <% end %>
+</div>

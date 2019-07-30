@@ -1,2 +1,0 @@
-class SingerRolesController < ApplicationController
-end

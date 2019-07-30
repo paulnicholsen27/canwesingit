@@ -1,0 +1,4 @@
+class SingerPartsController < ApplicationController
+
+
+end
