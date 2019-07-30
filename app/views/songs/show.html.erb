@@ -3,5 +3,14 @@
 <div>Holiday: <%= @song.holiday? %></div>
 <div>Active: <%= @song.active? %></div>
 
-<%= link_to "Edit This Song", edit_song_path(@song) %>
+<div>Parts Needed to Perform This Song</div>
+<div>Click on each part to choose potential singers</div>
+<ul>
+    <% @song.parts.each do |part| %>
+        <li><%= link_to part.name, song_part_path(@song, part) %></li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit Song Details", edit_song_path(@song) %>
+<%= link_to "Choose Parts for This Song", song_parts_path(@song) %>
 <%= link_to "All Songs", songs_path %>

@@ -1,0 +1,24 @@
+<h1><%= "#{@song.title} / #{@part.name}" %></h1>
+
+
+<%= form_tag song_part_singer_parts_path(@song, @part) do %>
+    <input type="hidden" name="song_id" value="<%= @song.id %>" />
+    <table>
+        <tr>
+            <th>Singer</th>
+            <th>Primary?</th>
+        <tr>
+    <% Singer.active.each do |s| %>
+        <tr>
+            <td>
+                <%= check_box_tag "singer_ids[]", s.id, checked = @part.singers.include?(s) %>
+                <%= s.name %>
+            </td>
+            <td>
+                <%= radio_button_tag "primary", s.id, @part.primary_singer == s %>
+            </td>
+        </tr>
+    <% end %>
+    </table>
+    <%= submit_tag "Update" %>
+<% end %>
