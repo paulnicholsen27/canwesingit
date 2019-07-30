@@ -1,7 +1,6 @@
-<% @active_singers.each do |s| %>
+<h1><%= @heading %></h1>
+<% @singers.each do |s| %>
     <div><%= link_to s.name, singer_path(s) %></div>
 <% end %>
 
-<% @inactive_singers.each do |s| %>
-    <div><%= link_to s.name, singer_path(s) %></div>
-<% end %>
+<%= link_to "Show All Singers", singers_path(q: "all") %>

@@ -1,6 +1,7 @@
 class SingersController < ApplicationController
 
     before_action :find_singer, only: [:show, :edit, :update]
+
     def new
         @singer = Singer.new
     end
@@ -16,8 +17,13 @@ class SingersController < ApplicationController
     end
 
     def index
-        @active_singers = Singer.all.select {|s| s.active? }
-        @inactive_singers = Singer.all.select {|s| !s.active? }
+        if params[:q] == "all"
+            @singers = Singer.all 
+            @heading = "All Singers"
+        else
+            @singers = Singer.all.select {|s| s.active? }
+            @heading = "Active Singers"
+        end
     end
 
     def show
