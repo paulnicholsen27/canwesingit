@@ -1,6 +1,12 @@
+<h1><%= @heading %></h1>
+
 <% @songs.each do |s| %>
     <div><%= link_to s.title, song_path(s) %></div>
 <% end %>
 
-
+<% if @heading == "All Songs" %>
+    <%= link_to "Show Active Songs", songs_path %>
+<% else %>
+    <%= link_to "Show All Songs", songs_path(q: "all") %>
+<% end %>
 <%= link_to "Add a Song", new_song_path %>

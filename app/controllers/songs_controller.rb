@@ -17,7 +17,13 @@ class SongsController < ApplicationController
     end
 
     def index
-        @songs = Song.all
+        if params[:q] == "all"
+            @songs = Song.all 
+            @heading = "All Songs"
+        else
+            @songs = Song.all.select {|s| s.active? }
+            @heading = "Active Songs"
+        end
     end
 
     def show

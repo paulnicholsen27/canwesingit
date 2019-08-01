@@ -3,4 +3,8 @@
     <div><%= link_to s.name, singer_path(s) %></div>
 <% end %>
 
-<%= link_to "Show All Singers", singers_path(q: "all") %>
+<% if @heading == "All Singers" %>
+    <%= link_to "Show Active Singers", singers_path %>
+<% else %> 
+    <%= link_to "Show All Singers", singers_path(q: "all") %>
+<% end %>
