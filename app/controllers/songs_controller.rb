@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
 
-    before_action :find_song, only: [:show, :edit, :update]
+    before_action :find_song, only: [:show, :edit, :update, :destroy]
 
     def new
         @song = Song.new
@@ -35,6 +35,11 @@ class SongsController < ApplicationController
             render :edit
         end
 
+    end
+
+    def destroy
+        @song.delete
+        redirect_to songs_path
     end
 
     private
