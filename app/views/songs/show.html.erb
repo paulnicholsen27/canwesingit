@@ -8,6 +8,7 @@
 
 <div>
     <div>Parts Needed to Perform This Song</div>
+    <% if @song.parts.count > 0 %>
     <div>Click on each part to add/change singers</div>
     <ul>
         <% @song.parts.each do |part| %>
@@ -26,6 +27,9 @@
             </ul>
         <% end %>
     </ul>
+    <% else %>
+        <div>This song has no voice parts assigned yet</div>
+    <% end %>
 </div>
 
 <%= link_to "Add Part", new_song_part_path(@song) %>
