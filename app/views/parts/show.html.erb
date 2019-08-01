@@ -1,5 +1,8 @@
 <h1><%= "#{@song.title} / #{@part.name}" %></h1>
 
+<%= render partial: "part_form" %>
+<%= button_to "Delete this part", song_part_path(@song, @part), "method" => :delete,
+    data: {:confirm => "Are you sure?"} %>
 
 <%= form_tag song_part_singer_parts_path(@song, @part) do %>
     <input type="hidden" name="song_id" value="<%= @song.id %>" />

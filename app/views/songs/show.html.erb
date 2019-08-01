@@ -2,25 +2,29 @@
 <div>Notes: <%= @song.notes %></div>
 <div>Holiday: <%= @song.holiday? %></div>
 <div>Active: <%= @song.active? %></div>
-
-<div>Parts Needed to Perform This Song</div>
-<div>Click on each part to edit potential singers</div>
-<ul>
-    <% @song.parts.each do |part| %>
-        <li><%= link_to part.name, song_part_path(@song, part) %></li>
-        <ul>
-            <% part.singers.each do |singer| %>
-                <li>
-                    <%= singer.name %>
-                    <% if part.primary_singer == singer %>
-                        - Primary
-                    <% end %>
-                </li>
-            <% end %>
-        </ul>
-    <% end %>
-</ul>
-
 <%= link_to "Edit Song Details", edit_song_path(@song) %>
-<%= link_to "Choose Parts for This Song", song_parts_path(@song) %>
+
+<div>
+    <div>Parts Needed to Perform This Song</div>
+    <div>Click on each part to edit potential singers</div>
+    <ul>
+        <% @song.parts.each do |part| %>
+            <li><%= link_to part.name, song_part_path(@song, part) %> 
+                (<%= part.solo? ? "Solo" : "Chorus" %><%= if part.exclusive? then ", Exclusive" end %>)
+            </li>
+            <ul>
+                <% part.singers.each do |singer| %>
+                    <li>
+                        <%= singer.name %>
+                        <% if part.primary_singer == singer %>
+                            - Primary
+                        <% end %>
+                    </li>
+                <% end %>
+            </ul>
+        <% end %>
+    </ul>
+</div>
+
+<%= link_to "Add Part", new_song_part_path(@song) %>
 <%= link_to "All Songs", songs_path %>
