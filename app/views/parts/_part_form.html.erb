@@ -4,11 +4,11 @@
         <%= f.hidden_field :song_id, :value => @song.id %>
         <div>
             <%= f.label :exclusive, "Is this part exclusive?" %>
-            <%= f.select :exclusive, ["No", "Yes"] %>
+            <%= f.select :exclusive, [["No", false], ["Yes", true]] %>
         </div>
         <div>
             <%= f.label :solo, "Is this part a solo or chorus?" %>
-            <%= f.select :solo, ["Chorus", "Solo"] %>
+            <%= f.select :solo, [["Chorus", false], ["Solo", true]] %>
         </div>
         <%= f.submit %>
     <% end %>

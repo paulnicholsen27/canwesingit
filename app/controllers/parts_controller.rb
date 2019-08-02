@@ -19,11 +19,6 @@ class PartsController < ApplicationController
 
     def create
         part = Part.create(part_params)
-        solo = params[:part][:solo]
-        exclusive = params[:part][:exclusive]
-        part.solo = (solo == "Chorus" ? false : true)
-        part.exclusive = (exclusive == "No" ? false : true)
-        part.save
         redirect_to song_path(part.song)
     end
 
@@ -33,11 +28,6 @@ class PartsController < ApplicationController
 
     def update
         @part.update(part_params)
-        solo = params[:part][:solo]
-        exclusive = params[:part][:exclusive]
-        @part.solo = (solo == "Chorus" ? false : true)
-        @part.exclusive = (exclusive == "No" ? false : true)
-        @part.save
         redirect_to song_path(@part.song)
     end
 
